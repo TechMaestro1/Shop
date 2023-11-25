@@ -1,0 +1,75 @@
+/* --------------------------- pagination --------------------------- */
+.last-line {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-input {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 28px;
+    color: #00ff4a;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.pagination a {
+    color: #ffffff;
+    margin: 0 5px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pagination span {
+    margin: 0 5px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.pagination a:hover {
+    background-color: rgba(201, 0, 246, 0.79);
+}
+
+/* --------------------------- end pagination --------------------------- */
+
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: light) {
+    .pagination a {
+        background: rgba(63, 63, 63);
+    }
+
+    .pagination span {
+        background: rgba(63, 63, 63);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .pagination a {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .pagination span {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* --------------------------- end Device theme --------------------------- */

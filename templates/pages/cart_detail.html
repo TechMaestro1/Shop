@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/pages/cart_detail.css' %}" rel="stylesheet">
+
+<!-- Cart -->
+<div class="CartContainer">
+    <div id="countdown-timer" style="display: none;"></div>
+    <!-- Header -->
+    <div class="Header">
+        <h3 class="Heading">Shopping Cart</h3>
+        <h5 class="Action"><a href="{% url 'empty_cart' %}">Remove all</a></h5>
+    </div>
+    <!-- end Header -->
+    <hr class="header">
+
+    <!-- Products -->
+    {% if cart_products %}
+    <div class="ProductsContainer">
+        {% for item in cart_products %}
+        <div class="Cart-Items">
+            <!-- Image -->
+            <div class="image-box">
+
+                <a href="{% url 'payment_pro' item.product.id %}">
+                    <img src="{{ item.product.photos.first.image.url }}" class="product-image">
+                </a>
+
+            </div>
+            <!-- end Image -->
+
+            <!-- Description -->
+            <div class="about">
+                <h1 class="title"><a href="{% url 'payment_pro' item.product.id %}">{{ item.product.name }}</a></h1>
+            </div>
+            <!-- end Description -->
+
+            <!-- Counter -->
+            <div class="counter">
+                <!-- Minus button -->
+                <div class="btn">
+                    <form method="post" action="{% url 'update_cart' item.product.id %}">
+                        {% csrf_token %}
+                        {% if item.quantity == 1 %}
+                        <button type="button" class="disabled_button minus" disabled>-</button>
+                        {% else %}
+                        <button type="submit" name="action" value="remove"
+                                class="available_button minus">-
+                        </button>
+                        {% endif %}
+                    </form>
+                </div>
+                <!-- Minus button -->
+
+                <!-- Input count field -->
+                <div class="count">
+                    <form method="post" action="{% url 'update_cart' item.product.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="update">
+
+                        <input type="number" name="quantity" class="count-input" value="{{ item.quantity }}" min="1"
+                               max="{{ item.product.count }}"
+                               onchange="updateQuantity('{{ item.product.id }}', this.value, 'update')">
+                        <!-- Auto input max count for product -->
+                        <!--                                                <input type="number" name="quantity" class="count-input" value="{{ item.quantity }}" min="1"-->
+                        <!--                                                       max="{{ item.product.count }}" oninput="checkMaxQuantity(this)">-->
+                        <!-- end Auto input max count for product -->
+                    </form>
+                </div>
+                <!-- end Input count field -->
+
+                <!-- Plus button -->
+                <div class="btn">
+                    <form method="post" action="{% url 'update_cart' item.product.id %}">
+                        {% csrf_token %}
+                        {% if item.quantity == item.product.count %}
+                        <button type="button" class="disabled_button" disabled>+</button>
+                        {% else %}
+                        <button type="submit" name="action" value="add" class="available_button"
+                                onclick="updateQuantity('{{ item.product.id }}', '{{ item.quantity }}', 'add')">+
+                        </button>
+                        {% endif %}
+                    </form>
+                </div>
+                <!-- end Plus button -->
+
+            </div>
+            <!-- end Counter -->
+
+            <!-- Price and Dropdown menu -->
+            <div class="prices">
+                <!-- Dropdown menu (Remove from cart) -->
+                <div class="dropdown">
+                    <button onclick="myFunction('{{ item.product.id }}')" class="dropbtn">&#8942;</button>
+                    <div id="myDropdown{{ item.product.id }}" class="dropdown-content">
+                        <a href="{% url 'remove_from_cart' item.product.id %}">
+                            <img src="{% static 'img/bin.png'%}" class="bin-image"></a>
+                    </div>
+                </div>
+                <!-- end Dropdown menu (Remove from cart) -->
+                <div class="amount">${{ item.subtotal|floatformat:1 }}</div>
+            </div>
+            <!-- end Price -->
+        </div>
+
+        <!-- Hr between products -->
+        {% if forloop.counter != cart_products|length %}
+        <hr class="hr_between_products">
+        <!-- end  Hr between products -->
+        {% endif %}
+        {% endfor %}
+    </div>
+    <!-- end Products -->
+
+    <div class="checkout">
+        <div class="total">
+            <div class="total-amount">{{ cart.total_price|floatformat:1 }} $</div>
+            <div class="text-right">
+                <form method="post" action="{% url 'payment_cart' %}">
+                    {% csrf_token %}
+                    {% if cart.total_price == 0 %}
+                    {% else %}
+                    <button type="submit" class="payment_button">Pay Now</button>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- If Cart empty -->
+    {% else %}
+    <div class="EmptyCartMessage">Cart is empty</div>
+    <a href="{% url 'home' %}" class="back_to_shopping">Back to shopping</a>
+    {% endif %}
+    <!-- end If Cart empty -->
+
+</div>
+<!-- end Cart -->
+<script src="{% static 'js/pages/cart_detail.js'%}"></script>
+{% endblock %}
+

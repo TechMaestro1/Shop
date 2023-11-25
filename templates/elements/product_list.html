@@ -1,0 +1,18 @@
+<div class="product" onclick="window.location.href='{% url 'payment_pro' product_id=item.id %}'">
+    {% if item.photos.all %}
+        <img src="{{ item.photos.first.image.url }}" alt="" class="product-image">
+    {% endif %}
+    <h3>{{ item.name|truncatechars:25 }}{% if item.description|length > 25 %}{% endif %}</h3>
+    <h4>{{ item.price }}$</h4>
+    {% if item.count >= 1 %}
+        <a href="{% url 'payment_pro' product_id=item.id %}" class="payment_button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Add to cart
+        </a>
+    {% else %}
+        <a class="alert-message"><h2>Not available</h2></a>
+    {% endif %}
+</div>

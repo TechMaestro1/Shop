@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/pages/home.css' %}" rel="stylesheet">
+<link href="{% static 'css/pages/product_detail.css' %}" rel="stylesheet">
+
+<!-- Product detail -->
+<div class="content-box">
+    <div class="product-details text_color-scheme">
+        <p class="product_name">{{ product.name }}</p>
+        <p class="">Description: {{ product.description }}</p><br>
+        <h4>Price: {{ product.price }}$</h4><br>
+
+
+        <!-- Buttons 'Add_to_cart' and 'Pay' -->
+        <div class="button-container {% if cart_product_count >= 10 %}vertical{% endif %}">
+
+            <!-- Cart button -->
+            {% if not in_cart and cart_product_count < 10 %}
+            <a href="{% url 'add_to_cart' product.id %}">
+                <button class="bookmarkBtn">
+                    <span class="IconContainer">
+                            <img src="{% static 'img/cart_dark.png'%}" class="picture">
+                    </span>
+                    <p class="text">Add to Cart</p>
+                </button>
+            </a>
+            {% else %}
+            {% if cart_product_count >= 10 %}
+            <p style="color: red">Maximum limit of 10 products in your cart.</p>
+            {% else %}
+            <p style="color: red">The product is already in your cart.</p>
+            {% endif %}
+            {% endif %}
+            <!-- end Cart button -->
+
+            <!-- Pay by card -->
+            <form id="payment-form" action="{% url 'payment_pro' product_id=product.id %}" method="POST"
+                  class="pay-by-card-button">
+                {% csrf_token %}
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="{{ stripe_public_key }}"
+                        data-amount="{{ product.price|floatformat:2|floatformat:0 }}00"
+                        data-name="{{ product.name }}"
+                        data-description="{{ product.description }}"
+                        data-image="{% if product.photo %}{{ product.photo.url }}{% endif %}"
+                        data-currency="usd"
+                        data-label="Pay by Card"
+                ></script>
+            </form>
+            <!-- end Pay by card -->
+        </div>
+        <!-- end Buttons 'Add_to_cart' and 'Pay' -->
+    </div>
+    <!-- Slideshow -->
+    {% if product.photos.all %}
+    <div class="slideshow-container">
+        {% for photo in product.photos.all %}
+        <div class="mySlides fade">
+            <img src="{{ photo.image.url }}" alt="Product Image" class="product-image-detail"
+                 onclick="openImage('{{ photo.image.url }}')">
+        </div>
+        {% endfor %}
+        <!-- Previous & Next buttons -->
+        {% if product.photos.count > 1 %}
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        {% endif %}
+        <!-- end Previous & Next buttons -->
+    </div>
+    {% endif %}
+    <!-- end Slideshow -->
+</div>
+<!-- end Product detail -->
+
+<!-- Display randomly generated products -->
+<div class="random-container">
+    {% for item in random_products %}
+    {% include 'elements/product_list.html' with products=item %}
+    {% endfor %}
+</div>
+<!-- end Display randomly generated products -->
+
+<script src="{% static 'js/pages/product_detail.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+        }
+
+        .body {
+            width: 100%;
+            border-radius: 10px;
+            background-color: #d5d0f5;
+        }
+
+        .container {
+            width: 580px;
+            padding: 10px;
+            display: block;
+            max-width: 580px;
+            Margin: 0 auto !important;
+        }
+
+        .content {
+            padding: 10px;
+            display: block;
+            Margin: 0 auto;
+            max-width: 580px;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .wrapper {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            width: 100%;
+            clear: both;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+            color: #999999;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            color: #000000;
+            font-weight: 400;
+            line-height: 1.4;
+            Margin-bottom: 30px;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .btn {
+            width: 100%;
+            color: #f1adff;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .btn a {
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 5px;
+            display: inline-block;
+            text-decoration: none;
+            background-color: #a16eab;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body class="">
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+    <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+            <div class="content">
+                <table class="main">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <h1>Activate Your Account</h1>
+                                        <h2>You are just one step away</h2>
+                                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                                            <tbody>
+                                            <tr>
+                                                <td align="left">
+                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <a href="{{ activation_link }}">Activate Account</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>If the button does not work, click on the following link
+                                            to activate your account:</p>
+                                        <p><a href="{{ activation_link }}">{{ activation_link }}</a></p>
+                                        <p>If you received this email by mistake, simply delete it.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- START FOOTER -->
+                <div class="footer">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="content-block">
+                                <span class="apple-link">For any questions write to this email</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="content-block powered-by">E_SHOP</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- END FOOTER -->
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

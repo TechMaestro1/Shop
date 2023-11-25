@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nav %}{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/pages/not_found.css' %}" rel="stylesheet">
+
+<!-- Lamp -->
+<div class="lamp__wrap">
+    <div class="lamp">
+        <div class="cable"></div>
+        <div class="cover"></div>
+        <div class="in-cover">
+            <div class="bulb"></div>
+        </div>
+        <div class="light"></div>
+    </div>
+</div>
+<!-- END Lamp -->
+
+<!-- Content -->
+<section class="error">
+    <div class="error__content">
+        <div class="error__message message">
+            <h1 class="message__title">Page Not Found</h1>
+            {% if error_message %}
+            <p class="message__text">{{ error_message }}</p>
+            {% else %}
+            <p class="message__text">We're sorry, the page you were looking for isn't found here.</p>
+            {% endif %}
+        </div>
+        <div class="error__nav e-nav">
+            <a href="{% url 'home' %}" class="e-nav__link"></a>
+        </div>
+    </div>
+</section>
+<!-- END Content -->
+
+{% endblock %}

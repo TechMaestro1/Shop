@@ -1,0 +1,457 @@
+/* --------------------------- data field --------------------------- */
+* {
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+}
+
+#cart {
+    height: 35px;
+}
+
+.search_img {
+    height: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.logo_e_shop {
+    height: 60px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-picture {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user-info h3 {
+    font-weight: 10;
+}
+
+.user-info img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.scrollable-email {
+    overflow-y: auto;
+}
+
+.scrollable-email::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.search-field input {
+    color: var(--text-color);
+}
+
+body.search-field i {
+    color: var(--text-color);
+}
+
+.search-field input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 0 11px 0 15px;
+    background-color: var(--search-bar);
+}
+
+.search-field i {
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    color: var(--nav-color);
+}
+
+.searchBox {
+    position: relative;
+}
+
+.searchBox .search-field {
+    display: flex;
+    opacity: 0;
+    right: -50px;
+    height: 50px;
+    width: 300px;
+    padding: 3px;
+    border-radius: 6px;
+    position: absolute;
+    align-items: center;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .search-field {
+    opacity: 1;
+    left: -200px;
+    margin-top: 140px;
+    pointer-events: auto;
+}
+
+/* --------------------------- data field --------------------------- */
+
+
+/* --------------------------- Navbar --------------------------- */
+nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 70px;
+    position: fixed;
+    background-color: var(--nav-color);
+}
+
+nav ul {
+    width: 100%;
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 10px 20px;
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav .nav-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 30px;
+    max-width: 1000px;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body.dark nav {
+    border: 1px solid #393838;
+}
+
+.nav-links li a {
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-bar .searchBox {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color)
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a::before {
+    content: '';
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    background-color: var(--text-color);
+}
+
+nav .nav-bar .sidebarOpen {
+    font-size: 25px;
+    padding: 5px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+/* --------------------------- end Navbar --------------------------- */
+
+/* --------------------------- searchToggle --------------------------- */
+.searchToggle {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    display: flex;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+i, .searchToggle i {
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --------------------------- end searchToggle --------------------------- */
+
+/* --------------------------- Sub-menu --------------------------- */
+.sub-menu {
+    margin: 10px;
+    padding: 20px;
+    /*padding: 13px;*/
+    border-radius: 9%;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-wrap {
+    top: 120%;
+    right: -12%;
+    width: 320px;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-link {
+    display: flex;
+    margin: 12px 0;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sub-menu-link p {
+    width: 50%;
+}
+
+.sub-menu-link img {
+    width: 23px;
+    padding: 5px;
+    border-radius: 30%;
+    margin-right: 20px;
+    background: #e5e5e5;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    transition: transform 0.1s;
+}
+
+.sub-menu-wrap.open-menu {
+    /*max-height: 400px;*/
+    max-height: 420px;
+
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(20px);
+}
+
+/* --------------------------- end Sub-menu --------------------------- */
+
+
+/* --------------------------- adapted for different device  --------------------------- */
+@media only screen and (max-width: 793px) {
+    .nav-links li:nth-child(2) {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 792px) {
+    .nav-links li:nth-child(1),
+    .nav-links li:nth-child(3) {
+        display: none;
+    }
+
+    .desktop-hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+
+    .menu {
+        top: 0;
+        left: -100%;
+        height: 100%;
+        z-index: 100;
+        width: 320px;
+        padding: 20px;
+        position: fixed;
+        transition: all 0.4s ease;
+        background-color: var(--side-nav);
+    }
+
+    nav.active .menu {
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle {
+        width: 100%;
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose {
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+
+    .nav-bar .nav-links {
+        padding-top: 30px;
+        flex-direction: column;
+    }
+
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+/* --------------------------- end adapted for different device  --------------------------- */
+
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: light) {
+    :root {
+        --nav-color: #ffffff;
+        --side-nav: #b5abf5;
+        --text-color: #000000;
+        --search-bar: #ffffff;
+        --search-text: #010718;
+    }
+
+    .sub-menu {
+        background: #ffffff;
+        box-shadow: 0 1px 10px rgb(146, 0, 255);
+    }
+
+    .searchBox .search-field {
+        background-color: #ffffff;
+        box-shadow: 0 1px 10px rgb(146, 0, 255);
+    }
+
+    .search-field input {
+        color: #000000;
+        background-color: var(--search-bar);
+    }
+
+    .sub-menu-link {
+        font-weight: bold;
+        color: #000000;
+    }
+
+
+    .user-info h3 {
+        color: #000000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --nav-color: #181818;
+        --side-nav: #131313;
+        --text-color: #FFF;
+        --search-bar: #181818;
+        --search-text: #010718;
+    }
+
+    .search-field input {
+        color: #ffffff;
+        background-color: var(--search-bar);
+    }
+
+    .searchBox .search-field {
+        background-color: #181818;
+    }
+
+    .sub-menu-link {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .sub-menu {
+        background: #181818;
+    }
+
+    .user-info h3 {
+        color: #FFFFFF;
+    }
+
+}
+
+/* --------------------------- end Device theme --------------------------- */

@@ -1,0 +1,129 @@
+/* --------------------------- data field --------------------------- */
+.short_text {
+    top: 35%;
+    left: 50%;
+    font-size: 20px;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.payment_text {
+    top: 20%;
+    left: 50%;
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.check-mark {
+    top: 20%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-right: -50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.back-home {
+    top: 80%;
+    left: 50%;
+    width: 340px;
+    height: 80px;
+    color: #FFFFFF;
+    font-size: 20px;
+    appearance: none;
+    line-height: 80px;
+    position: absolute;
+    text-align: center;
+    margin-right: -50%;
+    border-radius: 15px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------------- end data field --------------------------- */
+
+
+/* --------------------------- adapted for different device  --------------------------- */
+@media only screen and (max-width: 646px) {
+    .payment_text {
+        top: 30%;
+        left: 50%;
+        font-size: 40px;
+    }
+
+    .short_text {
+        top: 40%;
+        left: 50%;
+        font-size: 20px;
+    }
+
+    .check-mark {
+        top: 25%;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+@media only screen and (max-width: 394px) {
+    .payment_text {
+        top: 30%;
+        left: 50%;
+        font-size: 35px;
+    }
+}
+
+/* --------------------------- end adapted for different device  --------------------------- */
+
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: light) {
+    .short_text {
+        color: #000000;
+    }
+
+
+    .payment_text {
+        color: #000000;
+
+    }
+
+    .back-home {
+        background-color: #000000;
+    }
+
+    .back-home:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    }
+
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .short_text {
+        color: #ffffff;
+    }
+
+    .payment_text {
+        color: #ffffff;
+    }
+
+    .back-home {
+        background-color: #088c7a;
+
+    }
+
+    .back-home:hover {
+        background-color: rgba(8, 140, 120, 0.6);
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    }
+}
+
+/* --------------------------- end Device theme --------------------------- */

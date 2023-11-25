@@ -1,0 +1,22 @@
+{% load static %}
+<link href="{% static 'css/base/pagination.css' %}" rel="stylesheet">
+
+<div class="last-line">
+    <div class="flex-container">
+        <div class="pagination">
+            {% if products.has_previous %}
+            <a href="?q={{ query }}&page={{ products.previous_page_number }}">&lt;</a>
+            {% endif %}
+            <span>
+                <form action="" method="get" class="page-form">
+                    <input name="page" min="1" max="{{ paginator.num_pages }}" value="{{ products.number }}"
+                           maxlength="3" class="page-input">
+                    <input type="hidden" name="q" value="{{ query }}">
+                </form>
+            </span>
+            {% if products.has_next %}
+            <a href="?q={{ query }}&page={{ products.next_page_number }}">&gt;</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

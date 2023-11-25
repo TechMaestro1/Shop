@@ -1,0 +1,133 @@
+{% load static %}
+<link href="{% static 'css/base/navbar.css' %}" rel="stylesheet">
+
+<nav>
+    <div class="nav-bar" id="nav-bar">
+        <!-- Menu lines -->
+        <img src="{% static 'img/menu.png'%}" class="bx bx-menu sidebarOpen" id="menu">
+        <!-- end Menu -->
+
+        <!-- Logotype -->
+        <span class="logo navLogo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo.png'%}" id="logo" class="logo_e_shop">
+                </a>
+        </span>
+        <!-- end Logotype -->
+
+        <!--  Menu for phone -->
+        <div class="menu">
+
+            <div class="logo-toggle">
+                <span class="logo"><a href="{% url 'home' %}">Menu</a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li class="desktop-hidden"><a href="{% url 'cart_detail' %}">Cart</a></li>
+                <li><a href="{% url 'cart_detail' %}"><img src="{% static 'img/cart.png'%}" id="cart"></a></li>
+                {% if user.is_authenticated %}
+                <li class="desktop-hidden"><a href="{% url 'user_profile' %}">Profile</a></li>
+                {% if user.is_authenticated and user.is_staff %}
+                <li class="desktop-hidden"><a href="{% url 'admin:index' %}">Dashboard</a></li>
+                {% endif %}
+                <li class="desktop-hidden"><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li class="desktop-hidden"><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- end Menu for phone -->
+
+        <!-- Searchbar field and login button -->
+        <div class="searchBox">
+            <div class="searchBox">
+                <div class="searchToggle">
+                    <img src="{% static 'img/search.png'%}" id="search" class="search_img">
+                </div>
+
+                <form method="get" class="search-field" action="{% url 'search' %}">
+                    <input type="text" name="q" placeholder="Search..." maxlength="255">
+                    <button type="submit">
+                        <img src="{% static 'img/search.png'%}" id="search-input" class="search_img">
+                    </button>
+                </form>
+            </div>
+            <!-- end Search field -->
+
+            <!-- subMenu -->
+            {% if user.is_authenticated and user.photo %}
+            <img src="{{ user.photo.url }}" class="user-picture" onclick="toggleMenu()" class="account-image"></button>
+            {% else %}
+            <img src="{% static 'img/unknown.png' %}" class="user-picture" onclick="toggleMenu()">
+            {% endif %}
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    {% if user.is_authenticated %}
+                    <div class="user-info">
+                        {% if user.photo %}
+                        <img src="{{ user.photo.url }}">
+
+                        {% else %}
+                        <img src="{% static 'img/unknown.png' %}">
+                        {% endif %}
+                        {% if user.email|length > 18 %}
+                        <div class="scrollable-email">
+                            <h3>{{ user.email }}</h3>
+                        </div>
+                        {% else %}
+                        <h3>{{ user.email }}</h3>
+                        {% endif %}
+                    </div>
+                    <hr>
+                    <a href="{% url 'user_profile' %}" class="sub-menu-link">
+                        <img src="{% static 'img/profile.png'%}">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="{% url 'cart_detail' %}" class="sub-menu-link">
+                        <img src="{% static 'img/cart_dark.png'%}">
+                        <p>Your Cart</p>
+                        <span>></span>
+                    </a>
+
+                    <!-- Admin panel link -->
+                    {% if user.is_authenticated and user.is_staff %}
+                    <a href="{% url 'admin:index' %}" class="sub-menu-link">
+                        <img src="{% static 'img/dashboard.png'%}">
+                        <p>Dashboard</p>
+                        <span>></span>
+                    </a>
+                    {% endif %}
+                    <!-- end Admin panel link -->
+
+                    <a href="{% url 'logout' %}" class="sub-menu-link">
+                        <img src="{% static 'img/logout.png'%}">
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                    {% else %}
+                    <div class="user-info"><img src="{% static 'img/unknown.png' %}">
+                        <h3>Anonymous</h3>
+                    </div>
+                    <hr>
+
+                    <a href="{% url 'login' %}" class="sub-menu-link">
+                        <img src="{% static 'img/login.png'%}">
+                        <p>Login</p>
+                        <span>></span></a>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- end subMenu -->
+        </div>
+        <!-- end Searchbar field and login button -->
+    </div>
+</nav>
+
+<script>
+    let staticUrl = "{% static '' %}";
+</script>
+
+<script src="{% static 'js/navbar/navbar.js' %}"></script>

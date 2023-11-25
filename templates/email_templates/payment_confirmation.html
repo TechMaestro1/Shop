@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .confirmation-body {
+            border-radius: 10px;
+            background-color: #d5d0f5;
+            padding: 20px;
+        }
+
+        .confirmation-checkmark {
+            color: #0b6e0b;
+            text-align: center;
+            margin-right: 50px;
+            margin-top: 20px;
+        }
+
+        .confirmation-title {
+            text-align: center;
+            margin-right: 50px;
+            margin-top: 20px;
+        }
+
+        .confirmation-message {
+            text-align: center;
+            margin-right: 50px;
+            margin-top: 20px;
+        }
+
+        .confirmation-table {
+            text-align: left;
+            margin: 20px auto;
+        }
+
+        .confirmation-header {
+            font-size: 18px;
+        }
+
+        .confirmation-data {
+            text-align: center;
+            padding-left: 70px;
+            font-size: 18px;
+        }
+
+        .confirmation-divider {
+            border: none;
+            border-radius: 4px;
+            border-top: 6px solid #00649c;
+            margin: 10px 0;
+        }
+
+        .confirmation-products {
+            margin: 10px 0;
+            background-color: #ffeffb;
+            border-radius: 10px;
+        }
+
+        .confirmation-product {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .confirmation-image {
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+            max-width: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .confirmation-no-image {
+            font-size: 18px;
+            margin-top: 117px;
+            margin-right: 43px;
+            margin-left: 42px;
+            text-align: center;
+        }
+
+        .confirmation-product-details {
+            flex: 1;
+            margin-top: 20px;
+        }
+
+        .confirmation-product-name {
+            font-size: 24px;
+        }
+
+        .confirmation-product-table {
+            text-align: left;
+            margin: 10px auto;
+        }
+
+        .confirmation-product-header {
+            font-size: 18px;
+        }
+
+        .confirmation-product-data {
+            text-align: center;
+            padding-left: 70px;
+            font-size: 18px;
+        }
+
+        .confirmation-product-divider {
+            border: none;
+            border-top: 1px solid #c300ff;
+            margin: 10px 0;
+        }
+
+        .confirmation-contact {
+            color: #0b99d3;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<h1>Payment Confirmation</h1>
+<body class="confirmation-body">
+
+<h1 class="confirmation-checkmark">✓</h1>
+<h1 class="confirmation-title">Purchased Products:</h1>
+<h4 class="confirmation-message">Thank you for your purchase, we will contact you soon.</h4>
+<!-- Buyer information -->
+<table class="confirmation-table">
+    <thead>
+    <tr>
+        <th><h3 class="confirmation-header">User:</h3></th>
+        <td><h3 class="confirmation-data">{{ user }}</h3></td>
+    </tr>
+    <tr>
+        <th><h3 class="confirmation-header">Email:</h3></th>
+        <td><h3 class="confirmation-data">{{ email }}</h3></td>
+    </tr>
+    <tr>
+        <th><h3 class="confirmation-header">Paid Price:</h3></th>
+        <td><h3 class="confirmation-data">{{ total_price }} $</h3></td>
+    </tr>
+    </thead>
+</table>
+<!-- end Buyer information -->
+
+<hr class="confirmation-divider">
+<!-- Product information -->
+<div class="confirmation-products">
+    {% for product in products %}
+    <div class="confirmation-product">
+        {% if product.image_base64 %}
+        <img src="cid:inline_image_{{ product.id }}" alt="{{ product.name }}" class="confirmation-image">
+        {% else %}
+        <p class="confirmation-no-image">No image available <br>for this product</p>
+        {% endif %}
+
+        <div class="confirmation-product-details">
+            <h2 class="confirmation-product-name">{{ product.name }}</h2>
+            <table class="confirmation-product-table">
+                <tr>
+                    <th><h3 class="confirmation-product-header">Count:</h3></th>
+                    <td><h3 class="confirmation-product-data">{{ product.count }}</h3></td>
+                </tr>
+                <tr>
+                    <th><h3 class="confirmation-product-header">Price for {{ product.count }} items:</h3></th>
+                    <td><h3 class="confirmation-product-data">{{ product.price }} $</h3></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% if not forloop.last %}
+    <hr class="confirmation-product-divider">
+    {% endif %}
+    {% endfor %}
+    <h2 class="confirmation-contact">For any questions write to this email.</h2>
+</div>
+<!-- end Product information -->
+</body>
+</html>
+

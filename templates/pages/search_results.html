@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ query }}{% endblock %}
+{% block content %}
+<link href="{% static 'css/pages/home.css' %}" rel="stylesheet">
+
+<!--<h1 class="text_color-scheme ">Search Results for "{{ query }}"</h1>-->
+
+<!-- Product not found -->
+{% if product_list.count == 0 %}
+<script src="{% static 'js/pages/search_results.js' %}"></script>
+{% else %}
+<!-- end Product not found -->
+
+<!-- List of products (if found) -->
+<div class="flex-container">
+    {% for item in page_obj %}
+    {% include 'elements/product_list.html' with item=item %}
+    {% endfor %}
+</div>
+<!-- end List of products (if found) -->
+
+<!-- Pagination -->
+{% include 'elements/pagination.html' with products=page_obj %}
+<!-- end Pagination -->
+
+{% endif %}
+{% endblock %}

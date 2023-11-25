@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+
+{% load static %}
+{% block nav %}{% endblock %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/pages/login_registration.css' %}" rel="stylesheet">
+<div class="login-box login-size text_color-scheme{% if form.errors %} error-message{% endif %}">
+    <h2>Login</h2>
+    <!-- Login Form -->
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert-message" role="alert">
+            <p>Invalid email or password. Please try again.</p>
+        </div>
+        {% endif %}
+
+        <!-- User login field -->
+        <div class="user-box">
+            <input type="text" name="username" required>
+            <label>Email</label>
+        </div>
+        <div class="user-box">
+            <div class="password-field">
+                <input type="password" name="password" required>
+                <label>Password</label>
+
+                <div class="cule"><span class="eye-icon"><i class="fa fa-eye"></i></span>
+
+                    <h4 class="forgot-password"><a class="custom-forgot-password-link"
+                                                   href="{% url 'forgot_password' %}">Forgot password?</a></h4>
+
+                </div>
+            </div>
+        </div>
+        <!-- end User login field -->
+
+        <!-- Login button -->
+        <a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit" class="text_color-scheme">Login</button>
+        </a>
+        <!-- end Login button -->
+
+        <!-- Create/Login with Google -->
+        <div class="form-group">
+            <a href="{% url 'registration' %}">Create an account</a>
+            <button class="btn btn-outline-info">
+                <a href="{% provider_login_url 'google'%}?next=/">
+                    <img src="{% static 'img/Google_Logo.svg' %}" alt="Google logo" width="15px">
+                    Login with Google
+                </a>
+            </button>
+        </div>
+        <!-- end Create/Login with -->
+    </form>
+    <!-- end Login Form -->
+</div>
+
+<script src="{% static 'js/registration/login_registration.js' %}"></script>
+{% endblock %}

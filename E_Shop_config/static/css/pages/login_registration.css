@@ -1,0 +1,339 @@
+/* --------------------------- data field --------------------------- */
+.login-size {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------------- end registration --------------------------- */
+.registration-size {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------------- end registration --------------------------- */
+.messages {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box form a {
+    letter-spacing: 4px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    font-size: 16px;
+    transition: .5s;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.login-box a span {
+    display: block;
+    position: absolute;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+.login-box .user-box input {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 30px;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    transition: .5s;
+    position: absolute;
+    pointer-events: none;
+}
+
+.login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    animation: btn-anim1 1s linear infinite;
+}
+
+.login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s;
+}
+
+.login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+}
+
+.login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+    left: 0;
+    top: -20px;
+    font-size: 12px;
+}
+
+.form-errors {
+    color: red;
+    margin-left: -27px;
+}
+
+.errorlist {
+    color: #ef0909;
+    margin-top: -44px;
+}
+
+.cule {
+    margin-top: -28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.custom-forgot-password-link {
+    margin-top: 0px !important;
+    letter-spacing: 0px !important;
+    text-transform: none !important;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.login-box.error-message {
+    /*border-color: rgb(2 6 23);*/
+    /*box-shadow: 0 5px 19px rgb(255 0 78);*/
+    border-color: rgb(2 6 23);
+    box-shadow: 0 1px 19px 12px rgb(255 0 78);
+}
+
+/* --------------------------- end data field --------------------------- */
+
+
+/* --------------------------- adapted for different device  --------------------------- */
+@media only screen and (min-width: 386px) {
+    .login-box h2 {
+        padding: 0;
+        margin: 0 0 30px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .registration {
+        margin-top: 73px;
+        text-align: center;
+    }
+
+    .login-size,
+    .registration-size {
+        width: 100%;
+    }
+}
+
+/* --------------------------- end adapted for different device  --------------------------- */
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: light) {
+    .success-messages {
+        color: #01a127;
+    }
+
+    .eye-icon {
+        color: #000000;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+
+    .login-box {
+        /*background: rgb(255, 255, 255);*/
+        /*box-shadow: 0 5px 19px rgb(127 0 255);*/
+        background: rgb(255, 255, 255);
+        box-shadow: 0 1px 19px 10px rgb(127 0 255);
+    }
+
+    .login-box form a {
+        color: #000000;
+    }
+
+    .login-box a:hover {
+        background: #a6e0ff;
+
+
+        color: #000000;
+        border-radius: 5px;
+    }
+
+    .login-box .user-box input {
+        color: rgb(154, 0, 255);
+        border-bottom: 1.5px solid #000000;
+    }
+
+    .login-box .user-box label {
+        color: #000000;
+    }
+
+    .login-box a span:nth-child(1) {
+        background: linear-gradient(90deg, transparent, #9c03f4);
+    }
+
+    .login-box a span:nth-child(2) {
+        background: linear-gradient(180deg, transparent, #c003f4);
+    }
+
+    .login-box a span:nth-child(3) {
+        background: linear-gradient(270deg, transparent, #dc03f4);
+    }
+
+    .login-box a span:nth-child(4) {
+        background: linear-gradient(360deg, transparent, #f403f0);
+    }
+
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+        color: #000000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .success-messages {
+        color: #0aff44;
+    }
+
+    .eye-icon {
+        color: white;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+
+    .login-box {
+        background: rgba(0, 0, 0, .5);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    }
+
+    .login-box form a {
+        color: #03e9f4;
+    }
+
+    .login-box a:hover {
+        background: #03e9f4;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+    }
+
+    .login-box .user-box input {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .login-box .user-box label {
+        color: #fff;
+    }
+
+    .login-box a span:nth-child(1) {
+        background: linear-gradient(90deg, transparent, #03e9f4);
+    }
+
+    .login-box a span:nth-child(2) {
+        background: linear-gradient(90deg, transparent, #03e9f4);
+    }
+
+    .login-box a span:nth-child(3) {
+        background: linear-gradient(270deg, transparent, #03e9f4);
+    }
+
+    .login-box a span:nth-child(4) {
+        background: linear-gradient(360deg, transparent, #03e9f4);
+    }
+
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+        color: #03e9f4;
+    }
+}
+
+/* --------------------------- end Device theme --------------------------- */

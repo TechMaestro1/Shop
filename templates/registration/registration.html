@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nav %}{% endblock %}
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/pages/login_registration.css' %}" rel="stylesheet">
+<div class="login-box login-size  registration-size text_color-scheme{% if form.errors %} error-message{% endif %}">
+    <h2 class="registration">Registration</h2>
+    <!-- Registration form -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- user field -->
+        <div class="user-box">
+            <input type="text" name="{{ form.username.name }}" required>
+            {% if form.username.errors %}
+            <p class="messages">{{ form.username.errors }}</p>
+            {% endif %}
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="first_name" required>
+            {% if form.first_name.errors %}
+            <p class="messages">{{ form.first_name.errors }}</p>
+            {% endif %}
+            <label>First Name</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="last_name" required>
+            {% if form.last_name.errors %}
+            <p class="messages">{{ form.last_name.errors }}</p>
+            {% endif %}
+            <label>Last Name</label>
+        </div>
+        <div class="user-box">
+            <input type="email" name="email" required>
+            {% if form.email.errors %}
+            <p class="messages">{{ form.email.errors }}</p>
+            {% endif %}
+            <label>Email</label>
+        </div>
+        <div class="user-box">
+            <input type="date" name="birth_date" value="{{ user.birth_date|date:'Y-m-d' }}"
+                   min="1970-01-01" required/>
+            {% if form.birth_date.errors %}
+            <p class="messages">{{ form.birth_date.errors }}</p>
+            {% endif %}
+        </div>
+        <div class="user-box">
+            <div class="password-field">
+                <input type="password" name="password1" required>
+                {% if form.password1.errors %}
+                <p class="messages">{{ form.password1.errors }}</p>
+                {% endif %}
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="user-box">
+            <div class="password-field">
+                <input type="password" name="password2" required>
+                {% if form_errors %}
+                <p class="messages">{{ form_errors.password2 }}</p>
+                {% endif %}
+                <label>Confirm Password</label>
+            </div>
+        </div>
+        <div class="user-box">
+            <input type="file" name="photo" accept="image/*">
+            {% if form.photo.errors %}
+            <p class="messages">{{ form.photo.errors }}</p>
+            {% endif %}
+            <label>Profile Photo</label>
+        </div>
+        <!-- end user field -->
+
+        <!-- Registration button -->
+        <a style="margin-top: -8px;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit" class="text_color-scheme">Register now</button>
+        </a>
+        <!-- end Registration button -->
+    </form>
+    <!-- end Registration form -->
+</div>
+{% endblock %}

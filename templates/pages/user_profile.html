@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/pages/user_profile.css' %}" rel="stylesheet">
+<div class="user-profile-box">
+    <!--  Return img if it added  -->
+    <div class="image-column">
+        {% if user.photo %}
+        <img id="user-photo" src="{{ user.photo.url }}" alt="User Photo" class="product-image"/>
+
+        <!--  Delete Photo button  -->
+        <form method="POST" action="{% url 'delete_photo' %}">
+            {% csrf_token %}
+            <input type="submit" value="Delete Photo">
+        </form>
+        <!--  end Delete Photo button -->
+        {% else %}
+        <h1>No photo</h1>
+        {% endif %}
+    </div>
+    <!--  end Return img if it added  -->
+
+    <!--  User Profile -->
+    <div class="details-column">
+        <h1>User Profile</h1>
+        <!--  User Profile Field (Form)  -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <h3>Username:
+                <label><input type="text" class="user_data" name="username" value="{{ user.username }}"/></label>
+            </h3>
+            {% if form.username.errors %}
+            <p class="messages">{{ form.username.errors|join:", " }}</p>
+            {% endif %}
+
+            <h3>Name:
+                <label><input type="text" class="user_data" name="first_name" value="{{ user.first_name }}"/>
+                    <input type="text" class="user_data" name="last_name" value="{{ user.last_name }}"/></label>
+            </h3>
+            {% if form.first_name.errors or form.last_name.errors %}
+            <p class="messages">{{ form.first_name.errors|join:", " }} {{ form.last_name.errors|join:", " }}</p>
+            {% endif %}
+            <h3>Photo:
+                <input type="file" name="photo" accept="image/*" id="photo-input">
+            </h3>
+            {% if form.photo.errors %}
+            <p class="messages">{{ form.photo.errors|join:", " }}</p>
+            {% endif %}
+            <h3>Current Password:
+                <label><input type="password" name="current_password"/></label></h3>
+            {% if form.current_password.errors %}
+            <p class="messages">{{ form.current_password.errors|join:", " }}</p>
+            {% endif %}
+
+            <h3>New Password:
+                <label><input type="password" name="new_password"/></label></h3>
+            {% if form.new_password.errors %}
+            <p class="messages">{{ form.new_password.errors|join:", " }}</p>
+            {% endif %}
+
+            <h3>Email:
+                <label><input type="email" name="email" value="{{ user.email }}"/></label></h3>
+            {% if form.email.errors %}
+            <p class="messages">{{ form.email.errors|join:", " }}</p>
+            {% endif %}
+
+            <h3>Birthday:
+                <label>
+                    <input type="date" name="birth_date" value="{{ user.birth_date|date:'Y-m-d' }}" min="1970-01-01"/>
+                </label></h3>
+            {% if form.birth_date.errors %}
+            <p class="messages">{{ form.birth_date.errors|join:", " }}</p>
+            {% endif %}
+
+            <h3>Disabled?
+                <div class="switch">
+                    <input type="checkbox" name="disabled" {% if user.disabled %}checked="checked" {% endif %}
+                           value="True"
+                           id="disabled-switch">
+                    <label for="disabled-switch"></label>
+                </div>
+            </h3>
+            {% if form.disabled.errors %}
+            <p class="messages">{{ form.disabled.errors|join:", " }}</p>
+            {% endif %}
+            <input type="submit" value="Save Changes">
+        </form>
+        <!-- end User Profile Field (Form) -->
+    </div>
+    <!-- end User Profile -->
+</div>
+
+
+<script src="{% static 'js/pages/user_profile.js' %}"></script>
+{% endblock %}

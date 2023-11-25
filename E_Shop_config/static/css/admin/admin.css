@@ -1,0 +1,63 @@
+.change-list img[src*="/media/"] {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: dark) {
+    #header {
+        background: #3D3C3A;
+    }
+
+    #branding h1 a:link, #branding h1 a:visited {
+        color: #81d4fa;
+    }
+
+    :root {
+        --primary: #2b91c3;
+        --secondary: #088b3a;
+        --accent: #ffffff;
+        --primary-fg: #fff;
+        --body-fg: #fff;
+        --body-bg: #202124;
+        --body-quiet-color: #fff;
+        --body-loud-color: #f72525;
+        --header-color: #fff;
+        --header-branding-color: #ffffff;
+        --header-bg: #7599ab;
+        --header-link-color: #fff;
+        --breadcrumbs-fg: #000000;
+        --breadcrumbs-link-fg: var(--body-bg);
+        --breadcrumbs-bg: #40b7a6;
+        --link-fg: #ffffff;
+        --link-hover-color: #ffd100;
+        --link-selected-fg: #5b80b2;
+        --hairline-color: #ffffff21;
+        --border-color: #ffffff91;
+        --error-fg: #ff0000;
+        --message-success-bg: #0b6e0b;
+        --message-warning-bg: #bcbc30;
+        --message-error-bg: #c41b1b;
+        --darkened-bg: #35363a;
+        --selected-bg: #585757;
+        --selected-row: #35363a;
+        --button-fg: #fff;
+        --button-bg: #066fa2;
+        --button-hover-bg: #609ab6;
+        --default-button-bg: var(--secondary);
+        --default-button-hover-bg: #205067;
+        --close-button-bg: #888;
+        --close-button-hover-bg: #747474;
+        --delete-button-bg: #ba2121;
+        --delete-button-hover-bg: #a41515;
+        --object-tools-fg: #ffe200;
+        --object-tools-bg: #35363a;
+        --object-tools-hover-bg: #828080;
+    }
+}
+/* --------------------------- end Device theme --------------------------- */
+
+
+
+

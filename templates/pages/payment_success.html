@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Payment Successful{% endblock %}
+{% block nav %}{% endblock %}
+{% block content %}
+<link href="{% static 'css/pages/payment_success.css' %}" rel="stylesheet">
+
+<!-- Payment successful -->
+<p class="payment_text">Payment successful</p>
+<p class="short_text">We sent you letter on your email</p>
+<img src="{% static 'img/check_mark.png'%}" class="check-mark">
+<a class="back-home" href="{% url 'home' %}">Home</a>
+<!-- end Payment successful -->
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load static %}
+{% include 'base.html' %}
+{% block content %}
+<link href="{% static 'css/pages/home.css' %}" rel="stylesheet">
+
+<!-- Product list -->
+<div class="flex-container">
+    {% for item in products %}
+    {% include 'elements/product_list.html' with item=item %}
+    {% endfor %}
+</div>
+<!-- end Product list -->
+
+<!-- Pagination -->
+{% include 'elements/pagination.html' with products=products %}
+<!-- end Pagination -->
+
+{% endblock %}

@@ -1,0 +1,384 @@
+[
+{
+    "model": "E_Shop_Products.product",
+    "pk": "24ac7d5c-a403-4eb4-a4d4-fba2296138ad",
+    "fields": {
+        "name": "Redmi",
+        "description": "Screen diagonal 6.58 RAM 8 GB Memory has been restored 128 GB Battery capacity 4100 mA year Main camera 50 MP + 2 MP + 2 MP.",
+        "price": 699.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:21:28.902Z",
+        "updated_at": "2023-11-04T18:21:28.902Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "60d49781-fa51-4de0-b3f3-54bbcb418b4b",
+    "fields": {
+        "name": "Apple iPhone 12 Pro Max",
+        "description": "Apple iPhone 12 Pro Max is a smartphone where innovation meets style. Thanks to its A15 Pro chip, it offers incredible performance that's unmatched, while its aerospace-grade titanium design ensures exceptional durability while maintaining a stylish look.",
+        "price": 1299.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:16:05.333Z",
+        "updated_at": "2023-11-04T18:16:05.333Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "634a7045-bd19-4def-a951-056e751afb44",
+    "fields": {
+        "name": "Apple iPhone 14 Pro Max",
+        "description": "Apple iPhone 14 Pro Max is a smartphone where innovation meets style. Thanks to its A16 Pro chip, it offers incredible performance that's unmatched, while its aerospace-grade titanium design ensures exceptional durability while maintaining a stylish look.",
+        "price": 1399.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:02:00.527Z",
+        "updated_at": "2023-11-04T18:02:00.527Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "6460c0dd-a22d-4279-b897-461d67f001de",
+    "fields": {
+        "name": "Galaxy S22",
+        "description": "Screen (6.1\", Dynamic AMOLED 2X, 2340x1080) / Samsung Exynos 2200 (2.8 GHz + 2.5 GHz + 1.8 GHz) / triple main camera: 50 MP + 12 MP + 10 MP, front 10 MP / RAM 8 GB / 256 GB storage memory / 3G / LTE / 5G / GPS / support for 2 SIM cards (Nano-SIM) / Androi",
+        "price": 1499.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:22:47.823Z",
+        "updated_at": "2023-11-04T18:22:47.823Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "682d9c86-4f7b-4107-bf8d-4aaca04e9e61",
+    "fields": {
+        "name": "Galaxy Flip",
+        "description": "Screen (1.1\" Super AMOLED, 300 x 112) + (6.7\", Dynamic AMOLED, 2636 x 1980) / Qualcomm Snapdragon 855+ (1 x 2.95 GHz + 3 x 2.41 GHz + 4 x 1.78 GHz) / dual main camera: 12 MP + 12 MP, front: 10 MP / RAM 8 GB / 256 GB internal memory / 3G / LTE / GPS.",
+        "price": 1099.0,
+        "count": 99,
+        "created_at": "2023-11-04T17:47:00.690Z",
+        "updated_at": "2023-11-04T17:47:00.690Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "6e4f176b-483f-42c2-8d9b-c3b6c49edb86",
+    "fields": {
+        "name": "Samsung Galaxy",
+        "description": "Screen (6.5\", Super AMOLED, 2340x1080) / Samsung Exynos 1280 (2.0 GHz + 2.4 GHz) / main triple camera: 50 MP + 8 MP + 2 MP, front camera: 13 MP / RAM 8 GB / 128 GB storage memory' yati + microSD (up to 1 TB) / 3G / LTE / 5G / GPS /support for 2 SIM cards.",
+        "price": 789.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:26:24.919Z",
+        "updated_at": "2023-11-04T18:26:24.919Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "7eb414fd-e3f5-42a1-892a-223d313c4e4a",
+    "fields": {
+        "name": "Huawei",
+        "description": "Screen (6.6\", Dynamic AMOLED 2X, 2340x1080) / Qualcomm Snapdragon 8 Gen 2 for Galaxy (3.36 GHz + 2.8 GHz + 2.8 GHz + 2.0 GHz) / triple main camera: 50 MP + 12 MP + 10 MP, front 12 MP / RAM 8 GB / 256 GB storage / 3G / LTE / 5G / GPS / support for 2 SIM.",
+        "price": 1099.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:20:21.226Z",
+        "updated_at": "2023-11-04T18:20:21.226Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "962bd827-bd68-4348-8c63-e8582b10c1ec",
+    "fields": {
+        "name": "Nothing Phone",
+        "description": "Screen (6.9\", Dynamic AMOLED 2X, 2340x1080) / Samsung Exynos 2200 (2.8 GHz + 2.5 GHz + 1.8 GHz) / triple main camera: 50 MP + 12 MP + 10 MP, front 10 MP / RAM 8 GB / 256 GB storage memory / 3G / LTE / 5G / GPS / support for 2 SIM cards (Nano-SIM) / Androi",
+        "price": 1300.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:23:40.702Z",
+        "updated_at": "2023-11-04T18:23:40.702Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "af00dced-19ec-4d3e-8b18-fcc5185bf02f",
+    "fields": {
+        "name": "Apple iPhone 15 Pro Max",
+        "description": "Apple iPhone 15 Pro Max is a smartphone where innovation meets style. Thanks to its A17 Pro chip, it offers incredible performance that's unmatched, while its aerospace-grade titanium design ensures exceptional durability while maintaining a stylish look.",
+        "price": 1489.0,
+        "count": 99,
+        "created_at": "2023-11-04T17:38:13.522Z",
+        "updated_at": "2023-11-04T17:59:50.422Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "b853e8d2-b5fd-47da-a723-c74b1c1c45b6",
+    "fields": {
+        "name": "Samsung M53",
+        "description": "Screen diagonal 6.7 RAM 8 GB Memory has been restored 128 GB Battery capacity 5000 mA year Main camera 108 MP + 8 MP + 2 MP + 2 MP.",
+        "price": 999.0,
+        "count": 99,
+        "created_at": "2023-11-04T17:48:45.798Z",
+        "updated_at": "2023-11-04T18:15:13.539Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "bab09350-3ebd-4c7c-8a13-21d35ff56c10",
+    "fields": {
+        "name": "Apple iPhone 14",
+        "description": "Wonderfull. This is iPhone 14.  • Beautifully durable aerospace-grade aluminum • Vibrant Super Retina XDR display • Five fantastic colors • Ceramic Shield is tougher than any smartphone glass • Sails through spills with water resistance.",
+        "price": 889.99,
+        "count": 99,
+        "created_at": "2023-11-04T17:43:45.672Z",
+        "updated_at": "2023-11-04T17:43:45.672Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "c17d5184-c950-4d44-873a-3a021d693079",
+    "fields": {
+        "name": "Samsung S23",
+        "description": "Screen (6.8\", Dynamic AMOLED 2X, 3088x1440) / Qualcomm Snapdragon 8 Gen 2 for Galaxy (3.36 GHz + 2.8 GHz + 2.8 GHz + 2.0 GHz) / main quad camera: 200 MP + 12 MP + 10 MP + 10 MP, front 12 MP / RAM 12 GB / 512 GB internal memory / 3G / LTE / 5G / GPS / supp",
+        "price": 1299.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:18:43.421Z",
+        "updated_at": "2023-11-04T18:18:56.499Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "cc4a25ca-5892-4b49-9e86-0dee50675d99",
+    "fields": {
+        "name": "Samsung",
+        "description": "Screen (6.5\", Super AMOLED, 2340x1080) / Samsung Exynos 1280 (2.0 GHz + 2.4 GHz) / main triple camera: 50 MP + 8 MP + 2 MP, front camera: 13 MP / RAM 8 GB / 128 GB storage memory' yati + microSD (up to 1 TB) / 3G / LTE / 5G / GPS /support for 2 SIM cards.",
+        "price": 779.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:16:34.528Z",
+        "updated_at": "2023-11-04T18:17:12.683Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.product",
+    "pk": "fd0bd55f-33b9-4264-97c1-396489356893",
+    "fields": {
+        "name": "Apple iPhone 13 Pro",
+        "description": "Apple iPhone 13 Pro Max is a smartphone where innovation meets style. Thanks to its A15 Pro chip, it offers incredible performance that's unmatched, while its aerospace-grade titanium design ensures exceptional durability while maintaining a stylish look.",
+        "price": 1189.0,
+        "count": 99,
+        "created_at": "2023-11-04T18:25:02.369Z",
+        "updated_at": "2023-11-04T18:25:02.369Z",
+        "active": true
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 1,
+    "fields": {
+        "product": "af00dced-19ec-4d3e-8b18-fcc5185bf02f",
+        "image": "photos/iphone.jpeg"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 2,
+    "fields": {
+        "product": "af00dced-19ec-4d3e-8b18-fcc5185bf02f",
+        "image": "photos/i2.jpeg"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 3,
+    "fields": {
+        "product": "af00dced-19ec-4d3e-8b18-fcc5185bf02f",
+        "image": "photos/i3.jpeg"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 4,
+    "fields": {
+        "product": "bab09350-3ebd-4c7c-8a13-21d35ff56c10",
+        "image": "photos/Iphone_14.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 5,
+    "fields": {
+        "product": "bab09350-3ebd-4c7c-8a13-21d35ff56c10",
+        "image": "photos/Iphone_14_2.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 6,
+    "fields": {
+        "product": "682d9c86-4f7b-4107-bf8d-4aaca04e9e61",
+        "image": "photos/Galaxy-Flip_2.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 7,
+    "fields": {
+        "product": "682d9c86-4f7b-4107-bf8d-4aaca04e9e61",
+        "image": "photos/Galaxy-Flip.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 8,
+    "fields": {
+        "product": "682d9c86-4f7b-4107-bf8d-4aaca04e9e61",
+        "image": "photos/Galaxy-Flip_3.webp"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 12,
+    "fields": {
+        "product": "b853e8d2-b5fd-47da-a723-c74b1c1c45b6",
+        "image": "photos/Samsung-M53.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 13,
+    "fields": {
+        "product": "634a7045-bd19-4def-a951-056e751afb44",
+        "image": "photos/Iphone_15.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 14,
+    "fields": {
+        "product": "634a7045-bd19-4def-a951-056e751afb44",
+        "image": "photos/Iphone_15_2.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 15,
+    "fields": {
+        "product": "634a7045-bd19-4def-a951-056e751afb44",
+        "image": "photos/Iphone_15_3.jpeg"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 16,
+    "fields": {
+        "product": "634a7045-bd19-4def-a951-056e751afb44",
+        "image": "photos/Iphone_15_4.jpeg"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 17,
+    "fields": {
+        "product": "60d49781-fa51-4de0-b3f3-54bbcb418b4b",
+        "image": "photos/iphone12.jpg"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 18,
+    "fields": {
+        "product": "cc4a25ca-5892-4b49-9e86-0dee50675d99",
+        "image": "photos/original_samsung.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 19,
+    "fields": {
+        "product": "c17d5184-c950-4d44-873a-3a021d693079",
+        "image": "photos/Galaxy-S23.webp"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 20,
+    "fields": {
+        "product": "7eb414fd-e3f5-42a1-892a-223d313c4e4a",
+        "image": "photos/huawei.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 21,
+    "fields": {
+        "product": "24ac7d5c-a403-4eb4-a4d4-fba2296138ad",
+        "image": "photos/Redmi.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 22,
+    "fields": {
+        "product": "6460c0dd-a22d-4279-b897-461d67f001de",
+        "image": "photos/Samsung.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 23,
+    "fields": {
+        "product": "962bd827-bd68-4348-8c63-e8582b10c1ec",
+        "image": "photos/Nothing-Phone.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 24,
+    "fields": {
+        "product": "fd0bd55f-33b9-4264-97c1-396489356893",
+        "image": "photos/iPhone-13_1.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 25,
+    "fields": {
+        "product": "fd0bd55f-33b9-4264-97c1-396489356893",
+        "image": "photos/iPhone-13.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 26,
+    "fields": {
+        "product": "fd0bd55f-33b9-4264-97c1-396489356893",
+        "image": "photos/iPhone-13_3.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 27,
+    "fields": {
+        "product": "fd0bd55f-33b9-4264-97c1-396489356893",
+        "image": "photos/Iphone_14_3.png"
+    }
+},
+{
+    "model": "E_Shop_Products.productimage",
+    "pk": 28,
+    "fields": {
+        "product": "6e4f176b-483f-42c2-8d9b-c3b6c49edb86",
+        "image": "photos/Samsung-Galaxy.png"
+    }
+}
+]

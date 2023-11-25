@@ -1,0 +1,330 @@
+/* --------------------------- data field --------------------------- */
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.text {
+    z-index: 1;
+    height: 100%;
+    width: 100px;
+    color: white;
+    display: flex;
+    font-size: 1.04em;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .3s;
+}
+
+.picture {
+    width: 21px;
+    height: 21px;
+}
+
+.product {
+    text-align: center;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    border-radius: 20px;
+    flex: 0 0 calc(20.33% - 6px);
+}
+
+.product_name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.content-box {
+    top: 40%;
+    left: 50%;
+    width: 80%;
+    padding: 40px;
+    display: flex;
+    max-width: 1111px;
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+    flex-direction: row-reverse;
+    transform: translate(-50%, -50%);
+}
+
+.product-details {
+    flex-grow: 1;
+    padding-left: 30px;
+}
+
+.random-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 560px;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.product-image-detail {
+    height: 300px;
+    width: 300px;
+    margin-top: 10px;
+    max-width: 300px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.prev, .next {
+    top: 50%;
+    padding: 16px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    position: absolute;
+    border-radius: 3px;
+    transform: translateY(-50%);
+}
+
+.slideshow-container {
+    margin: auto;
+    max-width: 1000px;
+    position: relative;
+}
+
+.slideshow-container:hover .prev,
+.slideshow-container:hover .next {
+    background-color: rgba(134, 134, 134, 0.79);
+}
+
+.bookmarkBtn {
+    width: 140px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .3s;
+    background-color: rgb(12, 12, 12);
+    border: 1px solid rgba(255, 255, 255, 0.349);
+}
+
+.IconContainer {
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .3s;
+    background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
+}
+
+.stripe-button-el {
+    gap: 7px;
+    color: white;
+    width: 140px;
+    height: 40px;
+    border: none;
+    display: flex;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 20px 30px -7px rgba(97, 118, 238, 0.5);
+    background: linear-gradient(to right, #8be3fc, #576bff);
+}
+
+.stripe-button-el span {
+    padding: 0;
+    height: auto;
+    color: inherit;
+    display: inline;
+    background: none;
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    text-shadow: none;
+    font-size: inherit;
+    line-height: normal;
+    font-weight: inherit;
+    font-family: inherit;
+    background-image: none;
+    min-height: 1px !important;
+}
+
+.stripe-button-el:hover {
+    box-shadow: none;
+    transform: translate(0px, 2.2px);
+}
+
+.stripe-button-el:active {
+    transform: scale(0.96) translate(0px, 3.2px);
+}
+
+.bookmarkBtn:active {
+    transform: scale(0.95);
+    transition-duration: .3s;
+}
+
+.bookmarkBtn:hover .text {
+    width: 0;
+    font-size: 0;
+    transition-duration: .3s;
+    transform: translate(10px);
+}
+
+.bookmarkBtn:hover .IconContainer {
+    width: 130px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+/* --------------------------- end data field --------------------------- */
+
+
+/* --------------------------- adapted for different device --------------------------- */
+@media only screen and (min-width: 1440px) {
+    .random-container {
+        margin-top: 600px;
+    }
+}
+
+@media only screen and (max-width: 1034px) {
+    .random-container {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 690px;
+    }
+
+    .content-box {
+        top: 50%;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .content-box {
+        top: 50%;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .random-container {
+        display: none;
+    }
+
+
+    .product-details {
+        padding: 0;
+    }
+
+    .product_name {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .button-container.vertical {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .product-image-detail {
+        width: 200px;
+        height: 200px;
+        max-width: none;
+        margin-top: 20px;
+        object-fit: contain;
+        border-radius: 20px;
+    }
+
+    @media only screen and (max-width: 920px) {
+        .random-container {
+            margin-top: 700px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .pay-by-card-button {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 453px) {
+    .product-details {
+        padding: 0;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .product_name {
+        font-size: 17px;
+    }
+}
+
+/* --------------------------- end adapted for different device --------------------------- */
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: light) {
+    .prev, .next {
+        color: #000000;
+    }
+
+    .product {
+        background: rgb(255 255 255 / 87%);
+    }
+
+    .content-box {
+        background: rgb(255, 255, 255);
+        box-shadow: 0 15px 25px rgba(248, 246, 246, 0.6);
+    }
+
+    .content-box h1, h3, p {
+        color: rgb(0, 0, 0);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .prev, .next {
+        color: white;
+    }
+
+    .product {
+        background: rgba(35, 34, 34, 0.87);
+    }
+
+    .content-box {
+        background: rgba(0, 0, 0, .5);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    }
+}
+
+/* --------------------------- end Device theme --------------------------- */

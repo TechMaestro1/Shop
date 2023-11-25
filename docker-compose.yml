@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django-container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - DOCKERIZED=true
+    volumes:
+      - .:/app
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    env_file:
+      - .env
+    ports:
+      - "5050:80"
+
+  redis:
+    image: redis:latest
+    container_name: redis-container
+    ports:
+      - "6379:6379"
+
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery-worker-container
+    command: celery -A E_Shop_config worker --loglevel=info
+    depends_on:
+      - django
+    environment:
+      - DJANGO_SETTINGS_MODULE=E_Shop_config.settings
+      - POSTGRES_HOST=postgres
+      - DOCKERIZED=true
+
+  celery-beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery-beat-container
+    command: celery -A E_Shop_config beat --loglevel=info
+    depends_on:
+      - django
+    environment:
+      - DJANGO_SETTINGS_MODULE=E_Shop_config.settings
+      - POSTGRES_HOST=postgres
+      - DOCKERIZED=true

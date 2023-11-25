@@ -1,0 +1,168 @@
+/* --------------------------- data --------------------------- */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.content {
+    padding-top: 60px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+/* --------------------------- end data --------------------------- */
+
+/* --------------------------- payment button animation --------------------------- */
+
+.alert-message {
+    color: #ef0909;
+}
+
+.payment_button {
+    margin: 15px;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 15px 31px;
+    border-radius: 4px;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    filter: hue-rotate(0deg);
+    text-transform: uppercase;
+    transition: all 0.1s linear;
+    background: rgb(38, 182, 38);
+    font-family: "Roboto", sans-serif;
+}
+
+.payment_button:hover {
+    background: rgb(29, 126, 29);
+}
+
+.payment_button:hover span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    filter: hue-rotate(0deg);
+    animation: animate1 1s linear infinite;
+    background: #00f7ff;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.payment_button:hover span:nth-child(2) {
+    right: 0;
+    width: 3px;
+    top: -100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    animation-delay: 0.25s;
+    filter: hue-rotate(60deg);
+    animation: animate2 1s linear infinite;
+    background: #0aff44;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.payment_button:hover span:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    display: block;
+    position: absolute;
+    filter: hue-rotate(120deg);
+    animation: animate3 1s linear infinite;
+    background: #bfff00;
+
+}
+
+@keyframes animate3 {
+    0% {
+        height: 3px;
+        right: -100%;
+    }
+    50%,
+    100% {
+        height: 2px;
+        right: 100%;
+    }
+}
+
+.payment_button:hover span:nth-child(4) {
+    left: 0;
+    width: 3px;
+    height: 100%;
+    bottom: -100%;
+    display: block;
+    position: absolute;
+    animation-delay: 0.75s;
+    filter: hue-rotate(300deg);
+    animation: animate4 1s linear infinite;
+    background: #00f7ff;
+
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* --------------------------- end payment button animation --------------------------- */
+
+/* --------------------------- Device theme --------------------------- */
+@media (prefers-color-scheme: light) {
+    body {
+        background: #d5d0f5 fixed;
+    }
+
+    .text_color-scheme {
+        color: #000000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(29deg, rgb(0, 16, 45), rgb(2, 62, 94), rgb(3, 106, 161)) fixed;
+    }
+
+    .text_color-scheme {
+        color: #ffffff;
+    }
+}
+
+/* --------------------------- end Device theme --------------------------- */

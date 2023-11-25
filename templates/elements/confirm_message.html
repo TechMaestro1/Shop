@@ -1,0 +1,44 @@
+{% load static %}
+
+<link href="{% static 'css/base/confirm_message.css' %}" rel="stylesheet">
+
+{% if user.is_authenticated %}
+{% if not user.is_confirmed %}
+
+<div class="modal-overlay">
+    <div class="modal-content">
+
+        {% if messages %}
+        <div class="success-message">
+            {% for message in messages %}
+            {% if 'success' in message.tags %}
+            <p>{{ message }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="confirm-msg">
+            {% for message in messages %}
+            {% if 'warning' in message.tags %}
+            <p>{{ message }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        {% else %}
+        <div class="confirm-msg">
+            <p>Please confirm your account</p>
+        </div>
+
+        {% endif %}
+        <form action="{% url 'resend_confirmation' %}" method="post">
+            {% csrf_token %}
+            <button class="resend_button">Resend Activation Email</button>
+        </form>
+
+    </div>
+</div>
+
+<script>document.body.style.overflow = 'hidden';</script>
+{% endif %}
+{% endif %}
